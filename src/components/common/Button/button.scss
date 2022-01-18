@@ -1,0 +1,57 @@
+.btn {
+    display: inline-flex;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    align-items: center;
+    font-weight: 300;
+    font-size: .875em;
+    padding: 0.857em 1.571em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 7px;
+    &:hover {
+        cursor: pointer;
+        opacity: .8;
+    }
+}
+
+
+.btn-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.btn-black {
+    color: #fff;
+    background-color: #000;
+}
+
+.btn-arrow {
+    svg {
+        margin-left: 12px;
+        path {
+            fill:#000
+        }
+    }
+}
+
+.btn-black {
+    svg {
+        path {
+            fill:#fff
+        }
+    }
+}
+.btn-white {
+    padding: 0 !important;
+}
+
+.btn-icon {
+    padding: 0;
+    margin: 0 15px;
+    &:hover {
+        opacity: .7;
+    }
+}

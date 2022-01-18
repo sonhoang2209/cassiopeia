@@ -1,0 +1,65 @@
+.banner {
+    width: 100%;
+    margin-bottom: 40px;
+    .banner-inner{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .banner-item {
+        width: calc( ( 100% -  40px ) / 2 );
+        margin-bottom: 40px;
+        .banner-item-inner {
+            position: relative;
+            max-height: 220px;
+            .banner-background {
+                width: 100%;
+                img {
+                    width: 100%;
+                    max-height: 220px;
+                }
+            }
+            .banner-item-title {
+                position: absolute;
+                top: 20%;
+                left: 48%;
+                font-family: Roboto;
+                font-size: 1.75em;
+                font-weight: 500;
+                line-height: 28px;
+                margin: 0;
+            }
+            .banner-item-content {
+                position: absolute;
+                left: 48%;
+                top: 37%;
+                margin: 0;
+                font-size: 1.125em;
+            }
+            .banner-button {
+                position: absolute;
+                left: 48%;
+                top: 60%;
+                padding: 0;
+                font-weight: 500;
+                background-color: transparent;
+                color: #000;
+            }
+        }
+    }
+    
+    .banner-item__primary{
+        width: 100%;
+        
+        .banner-item-title {
+            left: 6.9% !important;
+            text-transform: uppercase;
+        }
+        .banner-item-content {
+            left: 6.9% !important;
+        }
+        .banner-button {
+            left: 6.9% !important;
+        }
+    }
+}
