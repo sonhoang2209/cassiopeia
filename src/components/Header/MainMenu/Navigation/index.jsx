@@ -3,23 +3,23 @@ import React from 'react';
 const navbarData = [
     {
         'title':'Flowers',
-        'link':'#'
+        'link':'/flowers'
     },
     {
         'title':'Plants',
-        'link':'#'
+        'link':'/plants'
     },
     {
         'title':'Gifts',
-        'link':'#'
+        'link':'/gifts'
     },
     {
         'title':'Discounts',
-        'link':'#'
+        'link':'/discounts'
     },
     {
         'title':'About us',
-        'link':'#'
+        'link':'/about-us'
     },
 ]
 

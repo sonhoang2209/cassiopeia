@@ -21,3 +21,13 @@ export function ButtonIcon(props) {
         </span>
     )
 }
+
+export function ButtonDefault(props) {
+    return (
+        <span className='btn-link btn-default'>
+            <div className={props.black ? 'btn-arrow btn-black btn' : 'btn-arrow btn-white btn'}>
+                <span>{props.text}</span>
+            </div>
+        </span>
+    )
+}

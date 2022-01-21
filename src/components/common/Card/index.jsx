@@ -1,12 +1,18 @@
 import React from 'react';
 import './card.scss'
 import { ButtonIcon } from '../Button';
+import { useNavigate } from "react-router-dom";
 
 function Card(props) {
+    let navigate = useNavigate();
 
     const addToCart = (data) => () => {
         console.log('add to card ' + data);
     }
+
+    const clickProduct = (data) => () => {
+        navigate(`/${data.category}/${data.id}`,{state: { data: data }})
+    };
     
     return (
         <div className='card'>
@@ -19,7 +25,7 @@ function Card(props) {
                         <div onClick={addToCart(props.data.id)}>
                             <ButtonIcon cart />
                         </div>
-                        <div href={'/products/'+ props.data.id}>
+                        <div onClick={clickProduct(props.data)}>
                             <ButtonIcon />
                         </div>
                     </div>

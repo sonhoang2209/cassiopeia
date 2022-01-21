@@ -6,7 +6,7 @@ import './slideCard.scss'
 
 function SlideCard(props) {
     let translate = 30000 / 1160
-    let items = 4
+    let items = props.catalog ? 4 : 5
     const [x,setX] = useState(0)
     const data = props.data.filter((data,index) => index < 5)
     const slideLeft = () =>{

@@ -1,0 +1,26 @@
+.breadcrumb {
+    .breadcrumb-tab {
+        margin-right: 12px;
+        text-decoration: none;
+        color: #000;
+        white-space: nowrap;
+        user-select: none;
+        font-size: 12px;
+        line-height: 16px;
+        text-transform: capitalize;
+        &:after {
+            content: "/";
+            display: inline-block;
+            margin-left: 12px;
+        }
+        &:last-child {
+            cursor: text;
+            font-weight: 600;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            &:after {
+                content: "";
+            }
+        }
+    }
+}
