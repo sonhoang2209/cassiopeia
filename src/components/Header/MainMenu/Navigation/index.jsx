@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const navbarData = [
     {
@@ -24,6 +25,9 @@ const navbarData = [
 ]
 
 function Navigation(props) {
+    
+    let navigate = useNavigate();
+
     return (
         <nav className='navbar header-navbar'>
             <ul>
@@ -31,7 +35,7 @@ function Navigation(props) {
                     navbarData.map((data, index)=> {
                         return(
                             <li key={index} className='nav-item'>
-                                <a href={data.link} className='nav-link'>{data.title}</a>
+                                <span onClick={() => navigate(data.link) } className='nav-link'>{data.title}</span>
                             </li>
                         )
                     })

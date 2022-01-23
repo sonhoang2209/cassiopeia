@@ -10,6 +10,8 @@
                 a{
                     text-decoration: none;
                     color: inherit;
+                    font-size: 18px;
+                    font-weight: 700;
                 }
                 
             }
@@ -26,7 +28,7 @@
                 
             }
             .link-icons {
-                margin: 16px 0;
+                margin: 10px 0;
                 display: flex;
                 .icon {
                     display: block;
@@ -47,10 +49,11 @@
                     justify-content: center;
                     li {
                         margin:0 38px;
-                        a{
+                        span {
                             font-size: 16px;
                             line-height: 22px;
                             font-weight: 500;
+                            cursor: pointer;
                         }
                         &:hover {
                             opacity: 0.8;

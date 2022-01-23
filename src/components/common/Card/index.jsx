@@ -11,7 +11,7 @@ function Card(props) {
     }
 
     const clickProduct = (data) => () => {
-        navigate(`/${data.category}/${data.id}`,{state: { data: data }})
+        navigate(`/${data.category}s/${data.id}`,{state: { data: data }})
     };
     
     return (

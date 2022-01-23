@@ -3,12 +3,14 @@ import ListProguct from '../components/Listproduct/ListProguct';
 import axios from '../axios/config';
 
 function Flowers(props) {
+    const type = props.type
     const [products, setProducts] = useState([])
 
     const getProducts = async () => {
         try {
             const products = await axios.get('/products')
-            setProducts(products.data.filter((data,index) => data.category === "flower"));
+            const data = products.data.filter((data) => data.category === type)
+            setProducts(data);
         } catch (e) {
             console.log(e);
         }
@@ -16,11 +18,11 @@ function Flowers(props) {
 
     useEffect(() => {
         getProducts()
-    },[])
+    },[type])
 
     return (
         <div className='flowers'>
-            <ListProguct type='flowers' data={products} />
+            <ListProguct type={type} data={products} />
         </div>
     );
 }

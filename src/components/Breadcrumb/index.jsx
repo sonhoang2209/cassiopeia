@@ -7,7 +7,10 @@ function Breadcrumb(props) {
         <div className='breadcrumb'>
             <nav>
                 <a href='/' className='breadcrumb-tab'>Home</a>
-                <a href={'/'+ props.type} className='breadcrumb-tab'>{props.type}</a>
+                <a href={'/'+ props.type+'s'} className='breadcrumb-tab'>{props.type+'s'}</a>
+                {
+                    props.nameProduct && <a href={'/'+ props.type+'s/'+ props.id} className='breadcrumb-tab'>{props.nameProduct}</a>
+                }
             </nav>
         </div>
     );
