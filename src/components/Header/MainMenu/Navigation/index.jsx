@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const navbarData = [
     {
@@ -25,9 +25,6 @@ const navbarData = [
 ]
 
 function Navigation(props) {
-    
-    let navigate = useNavigate();
-
     return (
         <nav className='navbar header-navbar'>
             <ul>
@@ -35,7 +32,9 @@ function Navigation(props) {
                     navbarData.map((data, index)=> {
                         return(
                             <li key={index} className='nav-item'>
-                                <span onClick={() => navigate(data.link) } className='nav-link'>{data.title}</span>
+                                <Link to={data.link}>
+                                    <span className='nav-link'>{data.title}</span>
+                                </Link>
                             </li>
                         )
                     })

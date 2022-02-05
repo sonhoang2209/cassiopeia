@@ -1,23 +1,19 @@
 import React,{ useEffect, useState } from 'react';
 import ListProguct from '../components/Listproduct/ListProguct';
-import axios from '../axios/config';
+import { useSelector } from "react-redux";
 
 function Flowers(props) {
     const type = props.type
     const [products, setProducts] = useState([])
+    const pros = useSelector((store) => store.productReducer.products);
 
     const getProducts = async () => {
-        try {
-            const products = await axios.get('/products')
-            const data = products.data.filter((data) => data.category === type)
-            setProducts(data);
-        } catch (e) {
-            console.log(e);
-        }
+        const data = pros.filter((data) => data.category === type)
+        setProducts(data);
     }
 
     useEffect(() => {
-        getProducts()
+        getProducts();
     },[type])
 
     return (

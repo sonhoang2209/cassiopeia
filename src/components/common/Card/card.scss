@@ -73,7 +73,11 @@
             &:first-child {
                 margin-right: 16px;
             }
+            &:last-child {
+                color: #82828b;
+                font-size: 13px;
+                text-decoration: line-through;
+            }
         }
-        
     }
 }

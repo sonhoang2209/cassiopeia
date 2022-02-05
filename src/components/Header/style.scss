@@ -7,13 +7,8 @@
             color: #000;
             .logo {
                 font-weight: 700;
-                a{
-                    text-decoration: none;
-                    color: inherit;
-                    font-size: 18px;
-                    font-weight: 700;
-                }
-                
+                font-size: 18px;
+                cursor: pointer;
             }
             .location {
                 display: flex;
@@ -36,6 +31,28 @@
                     height: 24px;
                     margin-left: 20px;
                 }
+                .sub-menu-btn {
+                    position: relative;
+                }
+                a{
+                    text-decoration: none;
+                    .icon-numb {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 15px;
+                        height: 15px;
+                        background-color: red;
+                        border-radius: 50%;
+                        top: -20%;
+                        right: -15%;
+                        font-size: 10px;
+                        color: #fff;
+                        text-align: center;
+                        font-weight: 600;
+                        position: absolute;
+                    }
+                }
             }
         }
         
@@ -56,7 +73,8 @@
                             cursor: pointer;
                         }
                         &:hover {
-                            opacity: 0.8;
+                            opacity: 0.6;
+                            transition: .2s;
                         }
                     }
                 }

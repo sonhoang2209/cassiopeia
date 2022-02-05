@@ -1,0 +1,32 @@
+.accordion {
+    .accordion-item {
+        font-size: 14px;
+        border-bottom: 1px solid #e6e6eb;
+        .accordion-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 56px;
+            font-weight: 500;
+            &:hover {
+                opacity: .6;
+            }
+        }
+        .accordion-content {
+            transition: .5s;
+            line-height: 1.2;
+            font-weight: 300;
+            overflow: hidden;
+            transition: line-height .2s,transform .2s,-webkit-transform .2s;
+            &.show {
+                transform: scaleY(1);
+                margin-bottom: 20px;
+            }
+            &.hiden {
+                transform: scaleY(0);
+                line-height: 0;
+                margin-bottom: 0;
+            }
+        }
+    }
+}

@@ -82,8 +82,12 @@
                         height: 25px;
                     }
                     .icons-count {
+                        transition: .2s;
                         &:hover {
                             opacity: .8;
+                        }
+                        &.disnable{
+                            opacity: .4;
                         }
                     }
                     .quantity {
@@ -92,6 +96,49 @@
                         font-size: 14px;
                         line-height: 25px;
                         font-weight: 500;
+                    }
+                }
+            }
+            .color-picker {
+                display: flex;
+                .color-item {
+                    width: 36px;
+                    height: 36px;
+                    margin-right: 12px;
+                    border-radius: 50%;
+                    transition: .3s;
+                    &.active {
+                        border: 2px solid #000000;
+                        padding: 2px;
+                    }
+                    div {
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 50%;
+                    }
+                }
+                
+            }
+            .product-button-group {
+                .button-group {
+                    display: flex;
+                    .btn {
+                        
+                        height: 56px;
+                        display: flex;
+                        justify-content: center;
+                        border-radius: 4px;
+                        user-select: none;
+                    }
+                    .btn-default {
+                        .btn {
+                            width: 309px;
+                        }
+                    }
+                    .btn-icon {
+                        width: 56px;
+                        border: 1px solid #ccc;
                     }
                 }
             }

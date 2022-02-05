@@ -1,17 +1,19 @@
 import React from 'react';
 import Location from './Location';
 import HeadIcons from './Icons/Index';
+import { useNavigate } from 'react-router-dom';
 
 function SubMenu(props) {
+    const navigate =useNavigate();
     return (
         <div className='sub-menu'>
             <div className='container'>
                 <div className='sub-menu-inner'>
                     <Location />
                     <div className='logo'>
-                        <a href='/'>
+                        <span onClick={()=> navigate('/')}>
                             <span>CASSIOPEIA</span>
-                        </a>
+                        </span>
                     </div>
                     <HeadIcons />
                 </div>

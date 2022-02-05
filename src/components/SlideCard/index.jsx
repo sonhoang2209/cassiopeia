@@ -35,10 +35,10 @@ function SlideCard(props) {
                     <div className='slide-title'>
                         <span>{props.title}</span>
                         <div className='slide-btns'>
-                            <span onClick={slideLeft} >
+                            <span className={x === 0 ? 'disnable' : ''} onClick={slideLeft} >
                                 <img src="https://cassiopeia.store/svgs/line-left-arrow-black.svg" alt="arrow"/>
                             </span>
-                            <span onClick={slideRight}>
+                            <span className={x < -translate * (data.length - items) ? 'disnable' : ''} onClick={slideRight}>
                                 <img src="https://cassiopeia.store/svgs/line-right-arrow-black.svg" alt="arrow"/>
                             </span> 
                         </div>
