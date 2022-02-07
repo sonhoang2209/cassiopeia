@@ -26,7 +26,7 @@ function Card(props) {
                         <div onClick={addToCart(data.id)}>
                             <ButtonIcon cart />
                         </div>
-                        <div onClick={clickProduct(data)}>
+                        <div id={data.id} onClick={clickProduct(data)}>
                             <ButtonIcon />
                         </div>
                     </div>

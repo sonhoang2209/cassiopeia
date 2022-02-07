@@ -1,8 +1,7 @@
 import axios from '../axios/config';
 
 const initialState = {
-    products: [],
-    categories: []
+    products: []
 };
 
 export const getProductList = () => async (dispatch) => {
@@ -20,12 +19,6 @@ export default function itemReducer(state = initialState, action) {
             return {
                 ...state,
                 products: action?.data.reverse()
-            }
-
-        case "GET_CATEGORY":
-            return {
-                ...state,
-                categories: action?.data
             }
 
         case "ADD_PRODUCT":

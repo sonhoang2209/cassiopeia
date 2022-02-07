@@ -1,6 +1,7 @@
 import React from 'react';
 import Breadcrumb from '../Breadcrumb'
 import ListCard from '../ListCard'
+import PageName from '../common/PageName';
 
 function ListProguct(props) {
     return (
@@ -8,9 +9,7 @@ function ListProguct(props) {
             <div className='container'>
                 <div className='list-product-inner'>
                     <Breadcrumb type={props.type} />
-                    <div className='page-name' style={{fontSize:32}}>
-                        {props.type}
-                    </div>
+                    <PageName name={props.type} />
                     <ListCard type={props.type} data={props.data} />
                 </div>
             </div>

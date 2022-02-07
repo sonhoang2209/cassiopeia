@@ -24,7 +24,7 @@ function CheckOutInner(props) {
     return (
         <div className='check-out__inner '>
             <div className='block-left checkout__content'>
-
+                
             </div>
             <div className='block-left checkout__order'>
                 <div className="checkout__order-name">Order total <span>({carts.length})</span></div>

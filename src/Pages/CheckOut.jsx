@@ -1,13 +1,14 @@
 import React from 'react';
 import CheckOutInner from '../components/CheckOut';
+import PageName from '../components/common/PageName';
+import Breadcrumb from '../components/Breadcrumb';
 
 function CheckOut(props) {
     return (
         <div className='check-out'>
             <div className='container'>
-                <div className='page-name' style={{fontSize:32}}>
-                    {props.type}
-                </div>
+                <Breadcrumb />
+                <PageName name='Checkout' />
                 <CheckOutInner />
             </div>
         </div>
