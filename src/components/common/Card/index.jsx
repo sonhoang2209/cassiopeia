@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './card.scss'
 import { ButtonIcon } from '../Button';
 import { useNavigate } from "react-router-dom";
 
 function Card(props) {
     let navigate = useNavigate();
-    const [data, setData] = useState(props.data)
+    // const [data, setData] = useState(props.data)
+    const data = props.data
 
     const addToCart = (data) => () => {
         console.log('add to card ' + data);
@@ -18,7 +19,7 @@ function Card(props) {
     return (
         <div className='card'>
             <div className='card-inner'>
-                <div className='card-thumbnail'>
+                <div className={data.category === 'flower' ? 'card-thumbnail card-thumbnail-pd' : 'card-thumbnail' }>
                     <div className='thumbnail'>
                         <img className='image' alt={data.name} src={data.thumbnail} />
                     </div>

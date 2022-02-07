@@ -3,7 +3,7 @@ import React from 'react';
 function DetailImage(props) {
     return (
         <div className='detail-image__inner'>
-            <div className='image'>
+            <div type={props.data.type} className={props.data.category === 'flower' ? 'image image-pd' : 'image' }>
                 <img alt={props.data.name} src={props.data.thumbnail} />
             </div>
             <div className='label-bar'>

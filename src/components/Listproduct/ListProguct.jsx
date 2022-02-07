@@ -8,7 +8,7 @@ function ListProguct(props) {
         <div className='list-product'>
             <div className='container'>
                 <div className='list-product-inner'>
-                    <Breadcrumb type={props.type} />
+                    <Breadcrumb />
                     <PageName name={props.type} />
                     <ListCard type={props.type} data={props.data} />
                 </div>

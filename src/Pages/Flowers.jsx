@@ -11,10 +11,10 @@ function Flowers(props) {
         const data = pros.filter((data) => data.category === type)
         setProducts(data);
     }
-    console.log(pros);
 
     useEffect(() => {
         getProducts();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[type])
 
     return (

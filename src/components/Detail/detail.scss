@@ -8,13 +8,17 @@
         width: 558px;
         .detail-image__inner {
             .image {
-                padding: 50px;
+                
                 background-color: #f9f9fb;
                 height: 558px;
+                &.image-pd {
+                    padding: 50px;
+                }
                 img {
                     width: 100%;
                     height: 100%;
                 }
+
             }
             .label-bar {
                 width: 506px;
