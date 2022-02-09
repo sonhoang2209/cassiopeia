@@ -20,6 +20,8 @@ function AppNavigation(props) {
                 <Route path="/flowers/:id" element={<DetailProduct type='flower' />} />
                 <Route path="/plants" element={<Flowers type="plant" />} />
                 <Route path="/plants/:id" element={<DetailProduct type='plant' />} />
+                <Route path="/gifts" element={<Flowers type="gift" />} />
+                <Route path="/gifts/:id" element={<DetailProduct type='gift' />} />
                 <Route path="/checkout" element={<CheckOut />} />
             </Routes>
         </>

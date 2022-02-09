@@ -14,7 +14,6 @@ export default function itemReducer(state = initialState, action) {
     switch (action.type) {
         case "ADD_TO_CART":
             const isIndExisted = state.cart?.findIndex(e => e?.id === action.data?.id && e?.colorPicker === action.data?.colorPicker)
-            
             if (isIndExisted !== -1) {
                 state.cart[isIndExisted].quantity = state.cart[isIndExisted].quantity + action.data.quantity
                 return {

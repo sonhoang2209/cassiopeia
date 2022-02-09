@@ -2,14 +2,15 @@ import React from 'react';
 import './card.scss'
 import { ButtonIcon } from '../Button';
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from 'react-redux';
 
 function Card(props) {
     let navigate = useNavigate();
-    // const [data, setData] = useState(props.data)
+    const dispatch = useDispatch();
     const data = props.data
 
     const addToCart = (data) => () => {
-        console.log('add to card ' + data);
+        dispatch({ type: "ADD_TO_CART", data: { ...data, quantity: 1 , colorPicker: data.color?.[0] } })
     }
 
     const clickProduct = (data) => () => {
@@ -24,8 +25,8 @@ function Card(props) {
                         <img className='image' alt={data.name} src={data.thumbnail} />
                     </div>
                     <div className='thumbnail-overlay'>
-                        <div onClick={addToCart(data.id)}>
-                            <ButtonIcon cart />
+                        <div onClick={addToCart(data)}>
+                            <ButtonIcon cart id={data.id} />
                         </div>
                         <div id={data.id} onClick={clickProduct(data)}>
                             <ButtonIcon />

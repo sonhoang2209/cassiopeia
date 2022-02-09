@@ -8,6 +8,11 @@ import './list-card.scss'
 function ListCard(props) {
     const [x,setX] = useState(4)
     const data = props.data.filter((data,index) => index < x)
+
+    const filter = () => {
+
+    }
+
     return (
         <div className='list-card'>
             <FilterBar items={props.data.length} />

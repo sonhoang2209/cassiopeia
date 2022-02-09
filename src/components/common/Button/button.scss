@@ -52,7 +52,27 @@
 .btn-icon {
     padding: 0;
     margin: 0 15px;
+    position: relative;
     &:hover {
         opacity: .7;
+    }
+    .in-cart {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 15px;
+        height: 15px;
+        background-color:lime;
+        border-radius: 50%;
+        top: 7px;
+        right: 6px;
+        font-size: 10px;
+        color: #fff;
+        text-align: center;
+        font-weight: 600;
+        position: absolute;
+        img {
+            width: 55%;
+        }
     }
 }

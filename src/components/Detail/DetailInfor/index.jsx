@@ -4,25 +4,6 @@ import { ButtonDefault, ButtonIcon } from '../../common/Button';
 import Accordion from '../../Accordion';
 import { useDispatch } from "react-redux";
 
-const colors = [
-    {
-        "name": "red",
-        "color":"#ff0000"
-    },
-    {
-        "name": "blue",
-        "color":"#0000cc"
-    },
-    {
-        "name": "yellow",
-        "color":"#ffff00"
-    },
-    {
-        "name": "pink",
-        "color":"#ff66ff"
-    }
-]
-
 const accordion = [
     {
         "title":"Bouquet contents",
@@ -90,20 +71,29 @@ function DetailInfor(props) {
                         <img alt='plus' src='https://cassiopeia.store/svgs/plus-i.svg' />
                     </span>
                 </div>
-            </div>
-            <div className='product-color detail-section'>
-                <p className='label'>Color:</p>
-                <div className='color-picker'>
-                    {
-                        props.data.color?.length !== 0 && renderColor()
-                    }
-                </div>
-            </div>
+            </div>{
+                    props.data.color?.length !== 0 ? (
+                        <div className='product-color detail-section'>
+                            <p className='label'>Color:</p>
+                            <div className='color-picker'>
+                                {
+                                    props.data.color?.length !== 0 && renderColor()
+                                }
+                            </div>
+                        </div>
+                        
+                    ) : (
+                        <div className='detail-section'>
+                            <div>Type : {props.data.types}</div>
+                        </div>
+                    )
+                }
+            
             <div className='product-button-group detail-section'>
                 <div className='button-group'>
                     <ButtonDefault black text="Order now" />
                     <span onClick={addToCart(props.data)}>
-                        <ButtonIcon cart />
+                        <ButtonIcon cart id={props.data.id} />
                     </span>
                     
                 </div>

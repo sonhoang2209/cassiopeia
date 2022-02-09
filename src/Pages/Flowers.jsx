@@ -1,6 +1,8 @@
 import React,{ useEffect, useState } from 'react';
 import ListProguct from '../components/Listproduct/ListProguct';
 import { useSelector } from "react-redux";
+import PageName from '../components/common/PageName';
+import Breadcrumb from '../components/Breadcrumb';
 
 function Flowers(props) {
     const type = props.type
@@ -17,9 +19,16 @@ function Flowers(props) {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     },[type])
 
+    const pageName = `${type}s`
+
     return (
         <div className='flowers'>
-            <ListProguct type={type} data={products} />
+            <div className='container'>
+                <Breadcrumb />
+                <PageName name={pageName} />
+                <ListProguct type={type} data={products} />
+            </div>
+            
         </div>
     );
 }

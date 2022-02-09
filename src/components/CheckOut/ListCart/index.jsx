@@ -1,9 +1,7 @@
 import React from 'react';
 
 function ListCart(props) {
-
     const deleteCart = (data) => () => {
-        // console.log(data)
         props.onClick(data);
     }
 
@@ -26,7 +24,9 @@ function ListCart(props) {
                                 </div>
                                 <div className='total-group'>
                                     <span className='quantity'>Quantity:<span>{item.quantity}</span></span>
-                                    <span className='total'>$<span>{item.quantity * item.price * ( 1 - item.offer / 100 )}</span></span>
+                                    {
+                                        item.quantity > 1 && <span className='total'>$<span>{item.quantity * item.price * ( 1 - item.offer / 100 )}</span></span>
+                                    }
                                 </div>
                                 {item.colorPicker && <span className='color'>Color: <span style={{background:item.colorPicker.color, color:"#ccc", padding:1}}>{item.colorPicker.name}</span></span>}
                             </div>

@@ -1,25 +1,29 @@
 import React from 'react';
-import { useNavigate, useLocation, Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { useLocation, Link, useParams } from 'react-router-dom';
 
 import './breadcrumb.scss'
 
 function Breadcrumb(props) {
-    const navigate = useNavigate();
     let location = useLocation();
-    const pathnames = location.pathname.split("/").filter(x => x)
+    let { id } = useParams();
 
-    const clickBreadcrumb = (data) => () => {
-        navigate(data)
+    const product = useSelector((store) => store.productReducer.products)
+    
+    const getName = () => {
+        return product.filter(x => x.id === id)[0].name
     }
+
+    const pathnames = location.pathname.split("/").filter(x => x)
 
     return (
         <div className='breadcrumb'>
             <nav>
-                <span onClick={clickBreadcrumb('/')} className='breadcrumb-tab'>Home</span>
+                <Link to='/' className='breadcrumb-tab'>Home</Link>
                 {
                     pathnames.map(( e, index ) => {
                         let to = `/${pathnames.slice(0, index + 1).join('/')}`
-                        return <Link key={index} className='breadcrumb-tab' to={to}>{e}</Link>
+                        return <Link key={index} className='breadcrumb-tab' to={to}>{ e === id ? getName() : e }</Link>
                     })
                 }
             </nav>

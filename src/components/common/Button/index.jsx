@@ -1,5 +1,6 @@
 import React from 'react';
 import './button.scss'
+import { useSelector } from 'react-redux';
 
 export default function ButtonArrow(props) {
     return (
@@ -15,8 +16,13 @@ export default function ButtonArrow(props) {
 }
 
 export function ButtonIcon(props) {
+    const carts = useSelector((store) => store.cartReducer.cart)
+    const inCart = carts.filter(x => x.id === props.id).length
     return (
         <span className='btn btn-icon'>
+            {
+                props.id && inCart > 0 && <span className='in-cart'><img alt='in cart' src='https://cassiopeia.store/svgs/check-solid.svg' /></span>
+            }
             <img alt='' src={ props.cart ? 'https://cassiopeia.store/svgs/cart-btn.svg' : 'https://cassiopeia.store/svgs/view-btn.svg' } />
         </span>
     )

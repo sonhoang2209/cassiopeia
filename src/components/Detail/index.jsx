@@ -19,7 +19,6 @@ function Detail(props) {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     },[props.id])
 
-
     return (
         <div className='detail'>
             <div className='detail-image'>
