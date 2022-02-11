@@ -8,6 +8,7 @@ import Header from '../components/Header';
 import Flowers from '../Pages/Flowers';
 import DetailProduct from '../Pages/DetailProduct';
 import CheckOut from '../Pages/CheckOut';
+import About from '../Pages/About';
 
 
 function AppNavigation(props) {
@@ -23,6 +24,7 @@ function AppNavigation(props) {
                 <Route path="/gifts" element={<Flowers type="gift" />} />
                 <Route path="/gifts/:id" element={<DetailProduct type='gift' />} />
                 <Route path="/checkout" element={<CheckOut />} />
+                <Route path="/about-us" element={<About />} />
             </Routes>
         </>
     );
