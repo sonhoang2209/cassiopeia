@@ -4,25 +4,6 @@ import { ButtonDefault, ButtonIcon } from '../../common/Button';
 import Accordion from '../../Accordion';
 import { useDispatch } from "react-redux";
 
-const colors = [
-    {
-        "name": "red",
-        "color":"#ff0000"
-    },
-    {
-        "name": "blue",
-        "color":"#0000cc"
-    },
-    {
-        "name": "yellow",
-        "color":"#ffff00"
-    },
-    {
-        "name": "pink",
-        "color":"#ff66ff"
-    }
-]
-
 const accordion = [
     {
         "title":"Bouquet contents",
