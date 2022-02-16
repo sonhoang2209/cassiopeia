@@ -4,10 +4,7 @@ import './accordion.scss'
 function Accordion(props) {
     const [click,setClick] = useState(false)
 
-    const setOpen = () => {
-        setClick(click ? false : true)
-        console.log(click)
-    }
+    const setOpen = () => setClick(!click);
 
     return (
             <div className='accordion-item' onClick={setOpen}>

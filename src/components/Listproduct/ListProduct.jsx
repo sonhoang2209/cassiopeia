@@ -1,7 +1,7 @@
 import React from 'react';
 import ListCard from '../ListCard'
 
-function ListProguct(props) {
+function ListProduct(props) {
     return (
         <div className='list-product'>
             
@@ -12,4 +12,4 @@ function ListProguct(props) {
     );
 }
 
-export default ListProguct;
+export default ListProduct;

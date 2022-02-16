@@ -1,5 +1,5 @@
 import React,{ useEffect, useState } from 'react';
-import ListProguct from '../components/Listproduct/ListProguct';
+import ListProduct from '../components/Listproduct/ListProduct';
 import { useSelector } from "react-redux";
 import PageName from '../components/common/PageName';
 import Breadcrumb from '../components/Breadcrumb';
@@ -26,7 +26,7 @@ function Flowers(props) {
             <div className='container'>
                 <Breadcrumb />
                 <PageName name={pageName} />
-                <ListProguct type={type} data={products} />
+                <ListProduct type={type} data={products} />
             </div>
             
         </div>

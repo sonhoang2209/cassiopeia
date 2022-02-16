@@ -1,8 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import BannerItem from './Item';
 import './banner.scss'
-// import axios from '../../axios/config';
-// import axios from 'axios';
 
 const data = [
     {
@@ -36,12 +34,6 @@ function Banners(props) {
 
     const getProducts = async () => {
         setBanner(data);
-        // try {
-        //     const products = await axios.get('/banner.json')
-        //     setProducts(products);
-        // } catch(e) {
-        //     console.log(e);
-        // }
     }
 
     useEffect(() => {

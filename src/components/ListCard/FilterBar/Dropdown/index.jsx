@@ -10,7 +10,7 @@ function Dropdown(props) {
     const onOptionClicked = value => () => {
         setSelectedOption(value);
         setIsOpen(false);
-        console.log( 'selected : '+ selectedOption);
+        // console.log( 'selected : '+ selectedOption);
     };
 
     return (
