@@ -16,9 +16,9 @@ function AppNavigation(props) {
     return (
         <>
             <Header />
-            {/* <div className='container'>
+            <div className='container'>
                 <Breadcrumb />
-            </div> */}
+            </div>
             <Routes>
                 <Route path="/" element={<Home />} />
                 {/* <Route path="/flowers" element={<Flowers type="flower" />} />

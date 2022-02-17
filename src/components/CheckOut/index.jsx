@@ -4,7 +4,7 @@ import './checkout.scss'
 import { useSelector, useDispatch } from 'react-redux';
 
 function CheckOutInner(props) {
-    const [allTotal,setAlltotal] = useState(0)
+    const [orderTotal,setOrderTotal] = useState(0)
     const dispactch = useDispatch();
     const carts = useSelector((store) => store.cartReducer.cart);
 
@@ -13,7 +13,7 @@ function CheckOutInner(props) {
         carts.forEach(element => {
             total = total + element.price * ( 1 - element.offer / 100 ) * element.quantity
         });
-        setAlltotal(total)
+        setOrderTotal(total)
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [carts]);
 
@@ -32,7 +32,7 @@ function CheckOutInner(props) {
                 <div className='checkout__field-container'>
                     <div className="checkout__field"><span>Shipping</span><span>FREE</span></div>
                     <div className="checkout__field"><span>Shipping</span><span>FREE</span></div>
-                    <div className="checkout__field"><span>Total</span><span>${allTotal}</span></div>
+                    <div className="checkout__field"><span>Total</span><span>${orderTotal}</span></div>
                 </div>
             </div>
         </div>

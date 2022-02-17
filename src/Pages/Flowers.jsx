@@ -2,17 +2,14 @@ import React,{ useEffect, useState } from 'react';
 import ListProduct from '../components/Listproduct/ListProduct';
 import { useSelector, useDispatch } from "react-redux";
 import PageName from '../components/common/PageName';
-import Breadcrumb from '../components/Breadcrumb';
-import {useLocation} from "react-router-dom"
+// import {useLocation} from "react-router-dom"
 import {getProductList} from '../redux/productReducer'
 
-
-function useQuery() {
-    const { search } = useLocation();
+// function useQuery() {
+//     const { search } = useLocation();
   
-    return React.useMemo(() => new URLSearchParams(search), [search]);
-  }
-
+//     return React.useMemo(() => new URLSearchParams(search), [search]);
+// }
 
 function Flowers(props) {
     const type = props.type
@@ -20,7 +17,8 @@ function Flowers(props) {
 
     const dispacth = useDispatch();
     useEffect(() => {
-        dispacth(getProductList());
+        dispacth(getProductList()); 
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
     
     const pros = useSelector((store) => store.productReducer.products);
@@ -51,7 +49,6 @@ function Flowers(props) {
     return (
         <div className='flowers'>
             <div className='container'>
-                <Breadcrumb />
                 <PageName name={pageName} />
                 <ListProduct type={type} data={products} />
             </div>
