@@ -1,7 +1,5 @@
 import React,{useState} from 'react';
 
-const options = ["Mangoes", "Apples", "Oranges"];
-
 function Dropdown(props) {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState(null);
@@ -10,8 +8,13 @@ function Dropdown(props) {
     const onOptionClicked = value => () => {
         setSelectedOption(value);
         setIsOpen(false);
-        console.log( 'selected : '+ selectedOption);
+        
     };
+
+    React.useEffect(() => {
+        console.log( 'selected : '+ selectedOption);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[isOpen])
 
     return (
         <div className='dropdown'>
@@ -22,9 +25,9 @@ function Dropdown(props) {
                 </div>
                 {isOpen && (
                     <ul className='dropdown-list'>
-                        {options.map(option => (
-                            <li className='list-item' onClick={onOptionClicked(option)} key={Math.random()}>
-                            {option}
+                        {props.options.map(option => (
+                            <li className='list-item' onClick={onOptionClicked(option.value)} key={Math.random()}>
+                            {option.title}
                             </li>
                         ))}
                     </ul>

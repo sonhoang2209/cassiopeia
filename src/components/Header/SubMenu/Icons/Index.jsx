@@ -1,18 +1,13 @@
 import React from 'react';
 import { useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
+import Search from './Search';
 
 function HeadIcons(props) {
     const carts = useSelector((store) => store.cartReducer.cart);
     return (
         <div className='link-icons'>
-            <Link to='/' className='sub-menu-btn'>
-                <span className='icon'>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fillRule="evenodd" clipRule="evenodd" d="M10.2297 18.4595C5.68458 18.4595 2 14.7749 2 10.2297C2 5.68458 5.68458 2 10.2297 2C14.7749 2 18.4595 5.68458 18.4595 10.2297C18.4595 12.1957 17.7701 14.0006 16.62 15.416L22.7506 21.5467C23.0831 21.8791 23.0831 22.4182 22.7506 22.7506C22.4182 23.0831 21.8791 23.0831 21.5467 22.7506L15.416 16.62C14.0006 17.7701 12.1957 18.4595 10.2297 18.4595ZM10.2297 16.7568C13.8345 16.7568 16.7568 13.8345 16.7568 10.2297C16.7568 6.62495 13.8345 3.7027 10.2297 3.7027C6.62495 3.7027 3.7027 6.62495 3.7027 10.2297C3.7027 13.8345 6.62495 16.7568 10.2297 16.7568Z" fill="black"/>
-                    </svg>
-                </span>
-            </Link>
+            <Search />
             <Link to='/checkout' className='sub-menu-btn'>
                 {
                     carts.length > 0 && <span className='icon-numb'>{carts.length}</span>

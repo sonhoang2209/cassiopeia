@@ -31,7 +31,7 @@ function CheckOutInner(props) {
                 <ListCart carts={carts} onClick={deleteCart} />
                 <div className='checkout__field-container'>
                     <div className="checkout__field"><span>Shipping</span><span>FREE</span></div>
-                    <div className="checkout__field"><span>Shipping</span><span>FREE</span></div>
+                    <div className="checkout__field"><span>Promocode</span><span>$0.00</span></div>
                     <div className="checkout__field"><span>Total</span><span>${orderTotal}</span></div>
                 </div>
             </div>
