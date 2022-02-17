@@ -1,19 +1,12 @@
 import React from 'react';
-import { Route, Routes, useRouteMatch } from "react-router-dom";
-import Home from '../Pages/Home';
-import Flowers from '../Pages/Flowers';
+import { Outlet } from "react-router-dom";
 
 
 function FlowersNavigation(props) {
-    const match = useRouteMatch();
     return (
-        <>
-            <Routes>
-                <Route path={match.url} exact component={Flowers} />
-                <Route path={`${match.url}/:productId`} component={Home} />
-            </Routes>
-            
-        </>
+        <div className='flower-navigation'>
+            <Outlet />
+        </div>
     );
 }
 

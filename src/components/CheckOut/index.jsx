@@ -9,7 +9,7 @@ function CheckOutInner(props) {
     const carts = useSelector((store) => store.cartReducer.cart);
 
     React.useEffect(() => {
-        var total = 0
+        let total = 0
         carts.forEach(element => {
             total = total + element.price * ( 1 - element.offer / 100 ) * element.quantity
         });

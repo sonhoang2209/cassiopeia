@@ -2,7 +2,6 @@ import React,{ useEffect, useState } from 'react';
 import Banners from '../components/Banner';
 import SlideCard from '../components/SlideCard';
 import axios from '../axios/config';
-
 function Home(props) {
     const [products, setProducts] = useState([])
 

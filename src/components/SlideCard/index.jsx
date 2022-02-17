@@ -9,6 +9,7 @@ function SlideCard(props) {
     let items = props.catalog ? 4 : 5
     const [x,setX] = useState(0)
     const data = props.data.filter((data,index) => index < 5)
+    
     const slideLeft = () =>{
         x < -7.105427357601002e-15 && setX(x + translate)
     }

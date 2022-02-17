@@ -11,7 +11,7 @@ function Breadcrumb(props) {
     const product = useSelector((store) => store.productReducer.products)
     
     const getName = () => {
-        return product.filter(x => x.id === id)[0].name
+        return product.filter(x => x.id === id)[0]?.name
     }
 
     const pathnames = location.pathname.split("/").filter(x => x)
@@ -19,7 +19,9 @@ function Breadcrumb(props) {
     return (
         <div className='breadcrumb'>
             <nav>
-                <Link to='/' className='breadcrumb-tab'>Home</Link>
+                {
+                    pathnames.length > 0 && <Link to='/' className='breadcrumb-tab'>Home</Link>
+                }
                 {
                     pathnames.map(( e, index ) => {
                         let to = `/${pathnames.slice(0, index + 1).join('/')}`

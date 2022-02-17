@@ -1,23 +1,50 @@
 import React,{ useEffect, useState } from 'react';
 import ListProduct from '../components/Listproduct/ListProduct';
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import PageName from '../components/common/PageName';
 import Breadcrumb from '../components/Breadcrumb';
+import {useLocation} from "react-router-dom"
+import {getProductList} from '../redux/productReducer'
+
+
+function useQuery() {
+    const { search } = useLocation();
+  
+    return React.useMemo(() => new URLSearchParams(search), [search]);
+  }
+
 
 function Flowers(props) {
     const type = props.type
     const [products, setProducts] = useState([])
+
+    const dispacth = useDispatch();
+    useEffect(() => {
+        dispacth(getProductList());
+    },[])
+    
     const pros = useSelector((store) => store.productReducer.products);
 
     const getProducts = async () => {
         const data = pros.filter((data) => data.category === type)
-        setProducts(data);
+        setProducts([...data]);
     }
+
+    // const SortItems = (sortData) => {
+    //     switch(queryKey.get("sort")) {
+    //         case "low-to-high": 
+    //             return sortData.sort((a ,b) => a.price - b.price)
+    //         case "high-to-low": 
+    //             return sortData.sort((a ,b) => b.price - a.price)
+    //         default:
+    //             return sortData
+    //     }
+    // }
 
     useEffect(() => {
         getProducts();
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[type])
+    },[type, pros])
 
     const pageName = `${type}s`
 
