@@ -2,7 +2,7 @@ import React,{ useEffect, useState } from 'react';
 import ListProduct from '../components/Listproduct/ListProduct';
 import { useSelector, useDispatch } from "react-redux";
 import PageName from '../components/common/PageName';
-import {getProductList} from '../redux/productReducer'
+import {getProductList , getFilterKey} from '../redux/productReducer'
 
 function Flowers(props) {
     const type = props.type
@@ -11,7 +11,8 @@ function Flowers(props) {
     const dispacth = useDispatch();
 
     useEffect(() => {
-        dispacth(getProductList()); 
+        dispacth(getProductList());
+        dispacth(getFilterKey("newest"))
         // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
     

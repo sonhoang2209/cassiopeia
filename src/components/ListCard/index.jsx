@@ -20,7 +20,7 @@ function ListCard(props) {
     }
 
     const SortType = ( data, key ) => {
-        return data.filter(e => e.types.toLowerCase().indexOf(key) > -1)
+        return data.filter(e => e.types.toLowerCase().indexOf(key) > -1 || e.occasion.toLowerCase().indexOf(key) > -1)
     }
 
     const SortItems = (ref) => {
@@ -59,7 +59,7 @@ function ListCard(props) {
 
     return (
         <div className='list-card'>
-            <FilterBar items={filterData.length} />
+            <FilterBar items={filterData.length} data={props.data} />
             <div className='list-card-inner'>
                 {
                     filterData.length > 0 ? filterData.filter((data,index) => index < x).map((item,index) => {
