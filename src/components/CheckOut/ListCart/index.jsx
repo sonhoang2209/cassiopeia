@@ -11,10 +11,10 @@ function ListCart(props) {
                 props.carts?.map((item,index) => {
                     return (
                         <div className='cart-item' key={index}>
-                            <div className='cart-item__thumbnail'>
+                            <div className='cart-item-thumbnail'>
                                 <img width={100} height={100} alt='thumbnail' src={item.thumbnail} />
                             </div>
-                            <div className='cart-item__content'>
+                            <div className='cart-item-content'>
                                 <div className='infor'>
                                     <span>{item.name}</span>
                                     <span className='price'>${item.price * ( 1 - item.offer / 100 )}</span>

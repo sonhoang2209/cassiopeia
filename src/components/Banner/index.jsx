@@ -13,7 +13,7 @@ function Banners(props) {
                     {
                         banners.map((item, index) => {
                             return (
-                                <div key={index} className={ index===0 ? "banner-item banner-item__primary" : "banner-item" }>
+                                <div key={index} className={ index===0 ? "banner-item banner-item-primary" : "banner-item" }>
                                     {
                                         index === 0 ? <BannerItem data={item} btnBlack /> : <BannerItem data={item} />
                                     }

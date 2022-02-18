@@ -22,17 +22,17 @@ function CheckOutInner(props) {
     }
 
     return (
-        <div className='check-out__inner '>
-            <div className='block-left checkout__content'>
+        <div className='check-out-inner '>
+            <div className='block-left checkout-content'>
                 
             </div>
-            <div className='block-left checkout__order'>
-                <div className="checkout__order-name">Order total <span>({carts.length})</span></div>
+            <div className='block-left checkout-order'>
+                <div className="checkout-order-name">Order total <span>({carts.length})</span></div>
                 <ListCart carts={carts} onClick={deleteCart} />
-                <div className='checkout__field-container'>
-                    <div className="checkout__field"><span>Shipping</span><span>FREE</span></div>
-                    <div className="checkout__field"><span>Promocode</span><span>$0.00</span></div>
-                    <div className="checkout__field"><span>Total</span><span>${orderTotal}</span></div>
+                <div className='checkout-field-container'>
+                    <div className="checkout-field"><span>Shipping</span><span>FREE</span></div>
+                    <div className="checkout-field"><span>Promocode</span><span>$0.00</span></div>
+                    <div className="checkout-field"><span>Total</span><span>${orderTotal}</span></div>
                 </div>
             </div>
         </div>
