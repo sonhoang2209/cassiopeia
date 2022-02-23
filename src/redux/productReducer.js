@@ -9,7 +9,7 @@ const initialState = {
 export const getProductList = () => async (dispatch) => {
     try {
         const products = await getProductFB()
-        console.log(products);
+        // console.log(products);
         dispatch({ type: 'GET_DATA', data: products })
     } catch (error) {
         console.error(error);
