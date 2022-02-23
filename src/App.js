@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import AppNavigation from "./appNavigation/AppNavigation";
 import { getProductList } from "./redux/productReducer";
 import { getBannerList } from "./redux/bannerReducer"
-import Test from "./firebase/Test";
+// import Test from "./firebase/Test";
 
 function App() {
   const dispatch = useDispatch();
@@ -16,8 +16,8 @@ function App() {
 
   return (
     <div className="App">
-      <Test />
-      {/* <AppNavigation /> */}
+      {/* <Test /> */}
+      <AppNavigation />
     </div>
   );
 }

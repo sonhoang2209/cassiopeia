@@ -1,4 +1,5 @@
-import axios from '../axios/config';
+// import axios from '../axios/config';
+import { getProductFB } from '../firebase/product.firebase';
 
 const initialState = {
     products: [],
@@ -7,8 +8,9 @@ const initialState = {
 
 export const getProductList = () => async (dispatch) => {
     try {
-        const products = await axios.get('/products')
-        dispatch({ type: 'GET_DATA', data: products?.data })
+        const products = await getProductFB()
+        console.log(products);
+        dispatch({ type: 'GET_DATA', data: products })
     } catch (error) {
         console.error(error);
     }

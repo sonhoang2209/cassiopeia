@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { db } from './config.firebase';
 import {collection, getDocs, addDoc, updateDoc, doc, deleteDoc} from 'firebase/firestore'
+import {getUsersFB} from './product.firebase'
 
 function Test(props) {
     const [newUser, setNewUser] = useState({
@@ -22,7 +23,6 @@ function Test(props) {
         const userDoc = doc(db, "users", data.id)
         const newFields = {age: data.age + 1}
         await updateDoc(userDoc, newFields)
-
     }
 
     const deleteUser = async (id) => {
@@ -32,8 +32,8 @@ function Test(props) {
 
     useEffect(() => {
         const getUsers = async () => {
-            const data = await getDocs(usersCollectionRef)
-            setUsers(data.docs.map((doc) => ({...doc.data(), id: doc.id})))
+            const data = await getUsersFB()
+            setUsers(data);
         }
         getUsers()
     }, [])
@@ -50,7 +50,7 @@ function Test(props) {
                     return (
                         <div key={user.id}>
                             <h2>name: {user.name}</h2>
-                            <h4>age: {user.age}</h4>
+                            <h4>age: {user.price}</h4>
                             <button onClick={() => {updateUser(user)}}>edit</button>
                             <button onClick={() => {deleteUser(user.id)}}>delete</button>
                         </div>
