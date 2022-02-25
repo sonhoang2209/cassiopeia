@@ -1,14 +1,16 @@
 import React,{ useEffect, useState } from 'react';
 import Banners from '../components/Banner';
 import SlideCard from '../components/SlideCard';
-import axios from '../axios/config';
+// import axios from '../axios/config';
+import {getProductFB} from '../firebase/product.firebase'
+
 function Home(props) {
     const [products, setProducts] = useState([])
 
     const getProducts = async () => {
         try {
-            const products = await axios.get('/products')
-            setProducts(products.data);
+            const products = await getProductFB()
+            setProducts(products);
         } catch (e) {
             console.log(e);
         }
