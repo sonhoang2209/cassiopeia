@@ -1,8 +1,11 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import CheckoutFeild from './CheckOutField';
 
 function ListCart(props) {
+    const dispactch = useDispatch();
     const deleteCart = (data) => () => {
-        props.onClick(data);
+        dispactch({ type: 'REMOVE_CART', data: data })
     }
 
     return (
@@ -34,6 +37,13 @@ function ListCart(props) {
                     )
                 })
             }
+            {props.carts?.length <= 0 && (
+                <div style={{textAlign:'center'}}>
+                    <h4>Your cart is empty</h4>
+                    <p>Next step: add a product to your cart</p>
+                </div>
+            )}
+            <CheckoutFeild />
         </div>
     );
 }

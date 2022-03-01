@@ -10,7 +10,6 @@ function Card(props) {
     const data = props.data
 
     const addToCart = (data) => () => {
-        console.log(data.color[0]);
         dispatch({ type: "ADD_TO_CART", data: { ...data, quantity: 1 , colorPicker: data.color?.[0] } })
     }
 

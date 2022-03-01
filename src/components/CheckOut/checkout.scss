@@ -13,13 +13,6 @@
         .checkout-order-name {
             margin-bottom: 40px;
         }
-        .checkout-field {
-            display: flex;;
-            justify-content: space-between;
-            padding-top: 18px;
-            padding-bottom: 14px;
-            border-top: 1px solid #f0f0f5;
-        }
         .list-cart {
             .cart-item {
                 display: flex;
@@ -58,4 +51,12 @@
     .checkout-content {
         width: 489px;
     }
+}
+
+.checkout-field {
+    display: flex;;
+    justify-content: space-between;
+    padding-top: 18px;
+    padding-bottom: 14px;
+    border-top: 1px solid #f0f0f5;
 }
