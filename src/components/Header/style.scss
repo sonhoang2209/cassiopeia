@@ -11,7 +11,7 @@
                 cursor: pointer;
             }
             .location {
-                width: 250px;
+                width:40%;
                 display: flex;
                 align-items: center;
                 .icon {
@@ -24,7 +24,7 @@
                 
             }
             .link-icons {
-                width: 250px;
+                width: 40%;
                 margin: 10px 0;
                 display: flex;
                 justify-content: flex-end;
@@ -70,13 +70,14 @@
                     border: solid #000;
                     border-width: 0 0 2px;
                     transition: width .5s,padding .5s;
+                    padding:3px;
                     &.show {
                         width: 170px;
-                        padding:7px;
+                        
                     }
                     &.hiden {
                         width: 0;
-                        border: 0;
+                        border-color: transparent;
                     }
                 }
                 .search-modal {
@@ -185,6 +186,62 @@
                                         font-size: 14px;
                                     }
                                 }
+                            }
+                        }
+                    }
+                }
+            }
+            .account {
+                margin-left: 20px;
+                .account-inner {
+                    .account-thumbnail {
+                        width: 32px;
+                        height: 32px;
+                        position: relative;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            border-radius: 50%;
+                            
+                        }
+                        &:hover {
+                            .popover {
+                                display: block;
+                            }
+                        }
+                        .popover {
+                            position: absolute;
+                            display: none;
+                            top: 100%;
+                            
+                            right: 0;
+                            padding-top: 10px;
+                            background: transparent;
+                            .popover-inner {
+                                position: relative;
+                                box-shadow: -5px 10px 52px #5b5d6752;
+                                &::before{
+                                    position: absolute;
+                                    top: -10px;
+                                    right: 6px;
+                                    display: block;
+                                    width: 10px;
+                                    height: 10px;
+                                    content: "";
+                                    box-shadow: -5px 10px 52px #5b5d6752;
+                                    border-bottom: 10px solid #fff;
+                                    border-right: 10px solid transparent;
+                                    border-left: 10px solid transparent;
+                                }
+                            }
+                        }
+                    }
+                    .sign-in-sign-out {
+                        span {
+                            cursor: pointer;
+                            padding: 0 5px;
+                            &:hover {
+                                opacity: .6;
                             }
                         }
                     }

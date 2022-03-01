@@ -37,6 +37,7 @@ function AppNavigation(props) {
                     <Route path='gifts/:id' element={<DetailProduct type='gift' />} />
                 </Route>
                 <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<Login signup />} />
             </Routes>
         </>
     );

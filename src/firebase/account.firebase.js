@@ -1,37 +1,49 @@
 import { auth } from "./config.firebase";
-import { createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { useEffect, useState } from "react";
+import {
+    createUserWithEmailAndPassword,
+    signOut,
+    signInWithEmailAndPassword,
+    GoogleAuthProvider,
+    signInWithPopup,
+    FacebookAuthProvider
+} from "firebase/auth";
 
-export function signUp (email, password) {
+export function signUp(email, password) {
     return createUserWithEmailAndPassword(auth, email, password)
 }
 
-export function logOut () {
+export function logOut() {
     return signOut(auth)
 }
 
-export function login (email, password) {
+export function login(email, password) {
     return signInWithEmailAndPassword(auth, email, password)
 }
 
-export function UserAuth() {
-    const [currentUser, setCurrentUser] = useState();
-
-    useEffect(() => {
-        const unsub = onAuthStateChanged(auth, user => setCurrentUser(user))
-        return unsub
-    },[])
-    return currentUser
-}
-
-const provider = new GoogleAuthProvider()
 
 export function SignInWithGoogleFB() {
-    signInWithPopup(auth, provider)
+    const googleProvider = new GoogleAuthProvider()
+    signInWithPopup(auth, googleProvider)
         .then((result) => {
-            console.log(result);
+            // console.log(result);
+            return result
         })
         .catch((err) => {
             console.log(err)
+        });
+}
+
+export function SignInWithFacebookFB() {
+    const facebookProvider = new FacebookAuthProvider()
+    signInWithPopup(auth, facebookProvider)
+        .then((result) => {
+            const credential = FacebookAuthProvider.credentialFromResult(result);
+            const token = credential.accessToken;
+
+            // const user = result.user;
+            console.log(token);
+        })
+        .catch((error) => {
+            console.log( error);
         });
 }
