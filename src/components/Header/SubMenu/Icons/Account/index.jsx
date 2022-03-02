@@ -25,11 +25,11 @@ function Account(props) {
                 <img alt='' src={currentUser?.photoURL} />
                 <div className='popover'>
                     <div className='popover-inner login'>
-                        <span className='btn' onClick={() => navigate('/login')}>
-                            Sign in
+                        <span className='btn' onClick={() => navigate('/account')}>
+                            Your Account
                         </span>
                         <span className='btn' onClick={handleLogOut}>
-                            log out
+                            Log Out
                         </span>
                     </div>
                 </div>

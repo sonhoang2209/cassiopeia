@@ -225,7 +225,9 @@
                             padding-top: 10px;
                             background: transparent;
                             .popover-inner {
+                                z-index: 9;
                                 position: relative;
+                                padding: 10px 20px;
                                 box-shadow: -5px 10px 52px #5b5d6752;
                                 &::before{
                                     position: absolute;
@@ -239,6 +241,14 @@
                                     border-bottom: 10px solid #fff;
                                     border-right: 10px solid transparent;
                                     border-left: 10px solid transparent;
+                                }
+                                span {
+                                    width: 100%;
+                                    border: 0;
+                                    margin-bottom: 10px;
+                                    &:last-child {
+                                        margin-bottom: 0;
+                                    }
                                 }
                             }
                         }

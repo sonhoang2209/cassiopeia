@@ -5,6 +5,15 @@
         text-align: center;
         
     }
+    .icon-btn {
+        display: inline-block;
+        margin: 0 10px;
+        cursor: pointer;
+        color: #1890ff;
+        &:hover {
+            opacity: .6;
+        }
+    }
     .btn {
         line-height: 1.5715;
         display: inline-block;
@@ -39,6 +48,9 @@
     .group-btn {
         display: flex;
         justify-content: space-around;
+    }
+    .group {
+        margin-bottom: 20px;
     }
 }
 

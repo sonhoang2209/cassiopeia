@@ -97,19 +97,31 @@ function Login(props) {
                             Log in
                         </button>
                     )}
-                    {/* <button disabled={loading || !currentUser} className='btn btn-primary' onClick={handleLogOut}>
-                        Log out
-                    </button> */}
                 </div>
                 <hr />
-                <div className='form-control group-btn'>
-                    <button className='btn btn-primary' onClick={hangledSignupWithGoogle}>
-                        Log in with GG
-                    </button>
-                    <button className='btn btn-primary' onClick={hangledSignupWithFacebook}>
-                        Log in with FB
-                    </button>
+                <div className='group'>
+                    <p style={{marginBottom:10}}>Or Sign Up Using :</p>
+                    <div>
+                        <span className='icon-btn' onClick={hangledSignupWithGoogle}>
+                            <img alt='login with facebook' src="https://img.icons8.com/color/40/000000/facebook-new.png"/>
+                        </span>
+                        <span className='icon-btn' onClick={hangledSignupWithFacebook}>
+                            <img alt='login with google' src="https://img.icons8.com/color/40/000000/google-logo.png"/>
+                        </span>
+                    </div>
                 </div>
+                {
+                    !props?.signup && (
+                        <div className='group'>
+                            <p style={{marginBottom:10}}>Or Sign Up New Account :
+                                <span className='icon-btn' onClick={() => navigate('/signup')}>
+                                    SIGN UP
+                                </span>
+                            </p>
+                        </div>
+                    )
+                }
+                
             </div>
         </div>
     );
