@@ -12,6 +12,7 @@ import FlowersNavigation from './FlowersNavigation';
 import Breadcrumb from '../components/Breadcrumb';
 import Login from '../components/Login';
 import AboutUs from '../Pages/AboutUs';
+import Discounts from '../Pages/Discounts';
 
 function AppNavigation(props) {
     return (
@@ -20,11 +21,12 @@ function AppNavigation(props) {
             <div className='container'>
                 <Breadcrumb />
             </div>
-            <div className='container'>
+            <div className='container' style={{marginBottom:30}}>
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/checkout" element={<CheckOut />} />
                     <Route path="/about-us" element={<AboutUs />} />
+                    <Route path="/discounts" element={<Discounts />} />
                     <Route path='/' element={<FlowersNavigation />} >
                         <Route path='flowers' index element={<Flowers type="flower" />} />
                         <Route path='flowers/:id' element={<DetailProduct type='flower' />} />
