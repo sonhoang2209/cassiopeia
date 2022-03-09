@@ -9,9 +9,12 @@
         display: inline-block;
         margin: 0 10px;
         cursor: pointer;
-        color: #1890ff;
+        padding: 0 5px;
         &:hover {
             opacity: .6;
+        }
+        img {
+            margin-right: 10px;
         }
     }
     .btn {
@@ -34,6 +37,7 @@
         color: rgba(0, 0, 0, 0.85);
         border-color: #d9d9d9;
         background: #fff;
+        border-radius: 4px;
         &.btn-primary {
             color: #fff;
             border-color: #1890ff;

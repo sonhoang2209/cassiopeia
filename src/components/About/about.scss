@@ -1,0 +1,48 @@
+.flexbox{
+    display: flex;
+    justify-content: space-between;
+    .texts{
+        width: 42%;
+        p {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 24px;
+        }
+    }
+    .about-us-gallery {
+        width: 54%;
+        height: auto;
+        display: flex;
+        > div {
+            display: flex;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .gallery-group1 {
+            width: 56%;
+            flex-direction: column;
+            grid-row-gap: 8px;
+            row-gap: 8px;
+        }
+        .gallery-group1-1 {
+            display: flex;
+            flex-direction: row;
+            grid-column-gap: 1.5%;
+            column-gap: 1.5%;
+        }
+        .gallery-group2 {
+            width: 42%;
+            flex-direction: column;
+            grid-row-gap: 1%;
+            row-gap: 1%;
+        }
+    }
+    .gallery {
+        grid-gap: 2%;
+        gap: 2%;
+    }
+}

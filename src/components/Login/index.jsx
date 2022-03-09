@@ -102,26 +102,24 @@ function Login(props) {
                 <div className='group'>
                     <p style={{marginBottom:10}}>Or Sign Up Using :</p>
                     <div>
-                        <span className='icon-btn' onClick={hangledSignupWithGoogle}>
-                            <img alt='login with facebook' src="https://img.icons8.com/color/40/000000/facebook-new.png"/>
-                        </span>
                         <span className='icon-btn' onClick={hangledSignupWithFacebook}>
+                            <img alt='login with facebook' src="https://img.icons8.com/color/40/000000/facebook-new.png"/>
+                            Facebook
+                        </span>
+                        <span className='icon-btn' onClick={hangledSignupWithGoogle}>
                             <img alt='login with google' src="https://img.icons8.com/color/40/000000/google-logo.png"/>
+                            Google
                         </span>
                     </div>
                 </div>
-                {
-                    !props?.signup && (
-                        <div className='group'>
-                            <p style={{marginBottom:10}}>Or Sign Up New Account :
-                                <span className='icon-btn' onClick={() => navigate('/signup')}>
-                                    SIGN UP
-                                </span>
-                            </p>
-                        </div>
-                    )
-                }
-                
+                <div className='group'>
+                    <p style={{marginBottom:10}}>
+                        {!props?.signup ? 'Or Sign Up New Account :' : 'Log in With Your Account :' } 
+                        <span className='icon-btn' onClick={() => navigate( !props?.signup ? '/signup' : '/login')}>
+                            {!props?.signup ? 'LOG IN' : 'SIGN UP' } 
+                        </span>
+                    </p>
+                </div>
             </div>
         </div>
     );

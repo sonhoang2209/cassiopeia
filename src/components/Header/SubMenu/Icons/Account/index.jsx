@@ -38,11 +38,10 @@ function Account(props) {
     }
 
     const AccountMethod = () => {
-
         return (
             <div className='sign-in-sign-out'>
                 <span className='' onClick={() => navigate('/login')}>
-                    Sign in
+                    Log In
                 </span>/
                 <span className='' onClick={() => navigate('/signup')}>
                     Sign up
