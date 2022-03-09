@@ -29,6 +29,7 @@ function SlideCard(props) {
         )
     }
 
+
     return (
         <div className='slide-card'>
             <div className='container'>
@@ -50,7 +51,9 @@ function SlideCard(props) {
                                 data.map((item,index) => {
                                     return (
                                         <div className='item' key={index}>
-                                            <Card data={item} />
+                                            {
+                                                props.discount ? <Card data={item} discount /> : <Card data={item} />
+                                            }
                                         </div>
                                     )
                                 })

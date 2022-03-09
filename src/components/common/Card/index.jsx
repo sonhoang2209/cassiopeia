@@ -32,7 +32,16 @@ function Card(props) {
                             <ButtonIcon />
                         </div>
                     </div>
+                    {
+                        props.discount && (
+                            <div className='item-offer-stock'>
+                                <span></span>
+                                discount {data.offer}%
+                            </div>
+                        )
+                    }
                 </div>
+                
                 <div className='card-content'>
                     <span className='link card-title' onClick={clickProduct(data)} >
                         <span>{data.name}</span>

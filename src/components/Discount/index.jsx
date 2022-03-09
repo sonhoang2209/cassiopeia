@@ -21,7 +21,7 @@ function DiscountInner(props) {
     
     return (
         <div className='discount-inner'>
-            <SlideCard title='Special offers' data={products} />
+            <SlideCard title='Special offers' data={products} discount />
         </div>
     );
 }
